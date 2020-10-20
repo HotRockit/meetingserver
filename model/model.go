@@ -26,8 +26,8 @@ type User struct {
 
 //MeetingRoom is a struct to describe MeetingRoom
 type MeetingRoom struct {
-	//RoomID uint `json:"room_id" gorm:"primary_key;not null;auto_increment"`
-	RoomName string `json:"room_name" gorm:"primary_key;type:varchar(100)"`
+	RoomID uint `json:"room_id" gorm:"primary_key;not null;auto_increment"`
+	RoomName string `json:"room_name" gorm:"not null;type:varchar(100)"`
 }
 
 //判断结构体是否为空

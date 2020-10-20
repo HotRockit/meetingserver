@@ -93,3 +93,11 @@ func (appDao *AppDao) DeleteUserDao(username string) uint {
 	appDao.Where("user = ?",username).Delete(&model.Meeting{})
 	return 1
 }
+
+func (appDao *AppDao) DeleteMeetingDao(id int) uint {
+	if err := appDao.Where("meeting_id = ?",id).Delete(&model.Meeting{}).Error;err != nil{
+		log.Print("删除失败")
+		return 0
+	}
+	return 1
+}
